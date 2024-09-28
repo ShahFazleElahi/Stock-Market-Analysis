@@ -52,3 +52,7 @@ stock_data['Crossover'] = stock_data['Signal'].diff()
 # Step 8: Display crossover dates
 crossover_dates = stock_data[stock_data['Crossover'] != 0]
 print("Crossover Points:\n", crossover_dates[['Close', 'Crossover']])
+
+# stock_analysis.py (continued)
+# Step 9: Export data to CSV
+stock_data.to_csv('AAPL_stock_analysis.csv')
