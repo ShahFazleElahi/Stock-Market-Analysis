@@ -13,3 +13,7 @@ print(stock_data.head())
 # Step 3: Calculate moving averages
 stock_data['MA50'] = stock_data['Close'].rolling(window=50).mean()
 stock_data['MA200'] = stock_data['Close'].rolling(window=200).mean()
+
+# stock_analysis.py (continued)
+# Step 4: Display summary statistics
+print(stock_data.describe())
