@@ -41,3 +41,9 @@ plt.title('AAPL Daily Trading Volume (2020-2023)')
 plt.xlabel('Date')
 plt.ylabel('Volume')
 plt.show()
+
+# stock_analysis.py (continued)
+# Step 7: Identify crossover points
+stock_data['Signal'] = 0
+stock_data['Signal'][50:] = np.where(stock_data['MA50'][50:] > stock_data['MA200'][50:], 1, 0)
+stock_data['Crossover'] = stock_data['Signal'].diff()
