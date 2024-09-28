@@ -32,3 +32,12 @@ plt.ylabel('Price (USD)')
 plt.legend()
 plt.grid()
 plt.show()
+
+# stock_analysis.py (continued)
+# Step 6: Visualization of daily trading volume
+plt.figure(figsize=(14, 7))
+plt.bar(stock_data.index, stock_data['Volume'], color='orange')
+plt.title('AAPL Daily Trading Volume (2020-2023)')
+plt.xlabel('Date')
+plt.ylabel('Volume')
+plt.show()
