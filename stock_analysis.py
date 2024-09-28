@@ -47,3 +47,8 @@ plt.show()
 stock_data['Signal'] = 0
 stock_data['Signal'][50:] = np.where(stock_data['MA50'][50:] > stock_data['MA200'][50:], 1, 0)
 stock_data['Crossover'] = stock_data['Signal'].diff()
+
+# stock_analysis.py (continued)
+# Step 8: Display crossover dates
+crossover_dates = stock_data[stock_data['Crossover'] != 0]
+print("Crossover Points:\n", crossover_dates[['Close', 'Crossover']])
