@@ -17,3 +17,18 @@ stock_data['MA200'] = stock_data['Close'].rolling(window=200).mean()
 # stock_analysis.py (continued)
 # Step 4: Display summary statistics
 print(stock_data.describe())
+
+# stock_analysis.py (continued)
+import matplotlib.pyplot as plt
+
+# Step 5: Visualization of closing prices and moving averages
+plt.figure(figsize=(14, 7))
+plt.plot(stock_data['Close'], label='AAPL Close Price', color='blue')
+plt.plot(stock_data['MA50'], label='50-Day MA', color='red')
+plt.plot(stock_data['MA200'], label='200-Day MA', color='green')
+plt.title('AAPL Stock Price and Moving Averages (2020-2023)')
+plt.xlabel('Date')
+plt.ylabel('Price (USD)')
+plt.legend()
+plt.grid()
+plt.show()
